@@ -1,0 +1,48 @@
+  {{form.hidden_tag()}}
+    {{form.email.label}}{{form.email()}}
+    {{form.address.label}}{{form.address()}}
+      {{form.phone.label}}{{form.phone()}}
+      {{form.dob.label}}{{form.dob()}}
+      {{form.xray.label}}{{form.xray()}}
+      {{form.tablets.label}}{{form.tablets()}}
+        {{form.bandage.label}}{{form.bandage()}}
+        {{form.appoinments.label}}{{form.appoinments()}}
+        {{form.submit()}}
+
+
+        <div class="field">
+            <div class="control">
+
+              <input class="input is-large" type="text" name="fullname" placeholder="Your FullName" autofocus="">
+            </div>
+        </div>
+          <div class="field">
+              <div class="control">
+                <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+
+
+              </div>
+          </div>
+          <div class="field">
+              <div class="control">
+
+                  <input class="input is-large" type="text" name="address" placeholder="Your Address" autofocus="">
+              </div>
+          </div>
+          <div class="field">
+              <div class="control">
+
+                  <input class="input is-large" type="tel" name="phone" placeholder="Your Phone" autofocus="">
+              </div>
+          </div>
+          <div class="field">
+              <div class="control">
+
+                  <input class="input is-large" type="date" name="dob" placeholder="DOB" autofocus="">
+              </div>
+          </div>
+
+
+
+          <button class="button is-block is-info is-large is-fullwidth">SAVE</button>
+      </form>

@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% from "_formhelpers.html" import render_field %}
+{% block content %}
+{% block body %}
+
+<!DOCTYPE html>
+
+
+<body>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-warning">Sign Up!</h3>
+
+                    <div class="box" >
+
+                        <figure class="avatar">
+                            <img src="https://cdn2.iconfinder.com/data/icons/business-people-2-1/512/910-16-128.png">
+                        </figure>
+                        <form method="POST" action="/register" >
+                            {{ form.hidden_tag() }}
+                          <div class="field">
+                              <div class="control">
+                                  {{ form.fullname.label }}{{form.fullname}}
+                              </div>
+                          </div>
+                            <div class="field">
+                                <div class="control">
+                                    {{ form.email.label }}{{form.email}}
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    {{form.address.label}}{{form.address}}
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                  {{form.phone.label}}{{form.phone}}
+                                </div>
+                            </div>
+
+
+
+                            <div class="field">
+                                <div class="control">
+                                    {{form.password.label}}{{form.password}}
+                                </div>
+                            </div>
+
+
+
+                            <button class="button is-block is-info is-large is-fullwidth">{{form.Submit}}Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+
+{% endblock %}
+{% endblock %}

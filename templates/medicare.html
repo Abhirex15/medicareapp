@@ -1,0 +1,142 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+
+
+<div class="container is-fluid">
+  <div class="notification">
+
+    <div class="columns">
+
+                                       <!-- Supplier Info -->
+                                       <div class="column is-7">
+                                           <p class="seller">
+                                               <span>{{fullname}}</span><br>
+                                               {{email}}
+                                           </p>
+                                           <br>
+                                           <!-- Invoice date -->
+                                           <p class="invoice-meta has-text-left">
+                                               <span>DOB : <small class="date">{{dob}}</small></span>
+                                           </p>
+                                       </div>
+                                       <!-- Customer Info -->
+                                       <div class="column is-5">
+                                           <p class="buyer has-text-right">
+                                               <span>{{phone}}</span><br>
+                                               {{address}}
+                                           </p>
+                                       </div>
+                                   </div>
+
+
+        <a class="button is-info">Back</a>
+
+    <table class="table">
+      <body>
+      		<header>
+
+      		<article>
+
+      			<table class="meta">
+
+      				<tr>
+      					<th><span contenteditable>Amount Due</span></th>
+      					<td><span id="prefix" contenteditable>$</span><span>1200.00</span></td>
+      				</tr>
+      			</table>
+      			<table class="inventory" cellspacing="10">
+      				<thead>
+      					<tr>
+      						<th><span contenteditable>Name</span></th>
+      						<th><span contenteditable>Items</span></th>
+      						<th><span contenteditable>Rate</span></th>
+      						<th><span contenteditable>Quantity</span></th>
+      						<th><span contenteditable>Price</span></th>
+      					</tr>
+      				</thead>
+      				<tbody>
+      					<tr>
+      						<td><a class="cut">-</a><span contenteditable>{{fullname}}</span></td>
+      						<td><span contenteditable>Xray</span></td>
+      						<td><span data-prefix>$</span><span contenteditable>500</span></td>
+      						<td><span contenteditable>1</span></td>
+      						<td><span data-prefix>$</span><span>500</span></td>
+      					</tr>
+                <tr>
+                  <td><a class="cut">-</a><span contenteditable>{{fullname}}</span></td>
+                  <td><span contenteditable>Xray</span></td>
+                  <td><span data-prefix>$</span><span contenteditable>500</span></td>
+                  <td><span contenteditable>1</span></td>
+                  <td><span data-prefix>$</span><span>500</span></td>
+                </tr>
+                <tr>
+                  <td><a class="cut">-</a><span contenteditable>{{fullname}}</span></td>
+                  <td><span contenteditable>Bandage</span></td>
+                  <td><span data-prefix>$</span><span contenteditable>100</span></td>
+                  <td><span contenteditable>2</span></td>
+                  <td><span data-prefix>$</span><span>200</span></td>
+                </tr>
+                <tr>
+                  <td><a class="cut">-</a><span contenteditable>{{fullname}}</span></td>
+                  <td><span contenteditable>capusle</span></td>
+                  <td><span data-prefix>$</span><span contenteditable>50</span></td>
+                  <td><span contenteditable>4</span></td>
+                  <td><span data-prefix>$</span><span>200</span></td>
+                </tr>
+      				</tbody>
+      			</table>
+      			<a class="add">+</a>
+      			<table class="balance">
+      				<tr>
+      					<th><span contenteditable>Total</span></th>
+      					<td><span data-prefix>$</span><span>1200.00</span></td>
+      				</tr>
+      				<tr>
+      					<th><span contenteditable>Amount Paid</span></th>
+      					<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+      				</tr>
+      				<tr>
+      					<th><span contenteditable>Balance Due</span></th>
+      					<td><span data-prefix>$</span><span>1200.00</span></td>
+      				</tr>
+      			</table>
+      		</article>
+
+          <script>
+
+
+          </script>
+      	</body>
+
+
+</table>
+
+<h3>Easiest way to pay your bills!</h3>
+<h4>Pay via QR code which directly transfers your money through UPI ID..</h4>
+<figure>
+  <img src="https://d3pb9c7cezktlk.cloudfront.net/wp-content/uploads/2015/03/ticketing1.gif"><div class="buttons has-primary is-right">
+<img src="https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_card_visa-128.png">
+<img src="https://cdn4.iconfinder.com/data/icons/payment-method/160/payment_method_master_card-128.png">
+<img src="https://cdn0.iconfinder.com/data/icons/payment-method/480/rupay_payment_card_bank-128.png">
+<img src="https://cdn2.iconfinder.com/data/icons/business-finance-vol-1-20/512/15-128.png">
+    <a class="button is-primary is-right"><form action="{{url_for('payment')}}" method="post">
+
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="{{ public_key }}"
+              data-description="PAYMENT"
+              data-amount="2000"
+              data-name="Pay for Bills"
+              data-locale="auto"
+              data-zip-code=True>
+            </script>
+    </form></a>
+<h2><b>You can directly transfer your money with your card</b></h2>
+</div>
+</figure>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% from "_formhelpers.html" import render_field %}
+{% block body %}
+<!DOCTYPE html>
+
+<body>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-warning">Login</h3>
+                    <p class="subtitle has-text-grey">Please login to proceed!</p>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="https://cdn0.iconfinder.com/data/icons/ecommercy/32/unlocked-128.png">
+                        </figure>
+                        <form  method="POST" action="/login">
+                            {{ form.hidden_tag() }}
+                            <div class="field">
+                                <div class="control">
+                                    {{form.email.label}}{{form.email}}
+                                </div>
+                            </div>
+
+
+
+                            <div class="field">
+                                <div class="control">
+                                    {{form.password.label}}{{form.password}}
+                                </div>
+                            </div>
+
+
+                            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
+
+{% endblock %}

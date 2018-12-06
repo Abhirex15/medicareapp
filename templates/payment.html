@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action="{{url_for('payment')}}" method="post">
+
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ public_key }}"
+            data-description="PAYMENT"
+            data-amount="1999"
+            data-name="Pay for Bills"
+            data-locale="auto"
+            data-zip-code=True>
+          </script>
+  </form>
+{% endblock %}
